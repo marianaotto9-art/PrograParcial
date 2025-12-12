@@ -20,13 +20,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void WinMenu()
+   public void Credits()
     {
-        SceneManager.LoadScene("MenuVictory");
-    }
-
-    public void MenuDied()
-    {
-        SceneManager.LoadScene("MenuDied");
+        SceneManager.LoadScene("Credits");
     }
 }
