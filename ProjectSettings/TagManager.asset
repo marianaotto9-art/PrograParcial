@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Heart
+  - Wall
+  - Enemy
+  - EnemyCounter
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Heart
+  - Water
+  - UI
+  - background
+  - objets
+  - Enemy
+  - Player
+  - Interfaz
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1450395305
+    locked: 0
+  - name: objets
+    uniqueID: 1152082649
+    locked: 0
+  - name: pj
+    uniqueID: 4059556979
+    locked: 0
+  - name: interfaz
+    uniqueID: 4059556979
+    locked: 0
+  - name: Canvas
+    uniqueID: 2465562025
+    locked: 0
