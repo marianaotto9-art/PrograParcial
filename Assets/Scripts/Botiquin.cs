@@ -11,7 +11,7 @@ public class Botiquin : MonoBehaviour
         Debug.Log("toque");
         if (collision.CompareTag("Player"))
         {
-            PlayerHeath hp = collision.GetComponent<PlayerHeath>();
+            Player hp = collision.GetComponent<Player>();
 
             if (hp != null)
             {

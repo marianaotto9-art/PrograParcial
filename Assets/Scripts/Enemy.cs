@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player") && Time.time >= nextDamageTime)  //Dentro de la colisión de tipo Stay preguntamos si el objeto con el componente Box Collider 2D está sobre un elemento con tag "Player", si es así accedemos al script Health.cs y tomamos el método de TakeDamage para que aplique el cálculo.
         {
-            other.GetComponent<PlayerHeath>()?.TakeDamage(damage);
+            other.GetComponent<Player>()?.TakeDamage(damage);
             nextDamageTime = Time.time + damageCooldown;   // Luego acá seteamos un tiempo para recibir daño para que no sea tan rápido todo por cuestión de los fps del juego.
         }
     }

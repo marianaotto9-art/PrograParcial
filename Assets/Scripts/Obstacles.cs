@@ -41,7 +41,7 @@ public class Obstacles : MonoBehaviour
     {
         if (isActive && other.CompareTag("Player"))
         {
-            PlayerHeath hp = other.GetComponent<PlayerHeath>();
+            Player hp = other.GetComponent<Player>();
             if (hp != null)
             {
                 hp.TakeDamage(damage);
