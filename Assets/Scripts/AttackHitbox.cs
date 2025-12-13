@@ -12,7 +12,7 @@ public class AttackHitbox : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+            Enemy enemyHealth = collision.GetComponent<Enemy>();
 
             if (enemyHealth != null)
                 enemyHealth.TakeDamage(damage);
