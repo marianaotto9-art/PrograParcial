@@ -1,27 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerAttack : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public GameObject sword; 
     public float attackDuration = 0.2f; 
     private bool isAttacking = false;
+    public int maxHearts = 5;
+    public int currentHearts;
+
+    public GameObject[] hearts;
+
 
     private Vector2 lastMoveDirection = Vector2.down;
 
     void Update()
     {
-        
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        Ataque(horizontal, vertical);
+        currentHearts = maxHearts;
 
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
+        hearts = hearts.OrderBy(h => h.name).ToArray();
+
+        UpdateHeartsUI();
+    }
+
+    private void Ataque(float horizontal, float vertical)
+    {
         Vector2 moveDir = new Vector2(horizontal, vertical);
 
         if (moveDir != Vector2.zero)
             lastMoveDirection = moveDir.normalized;
 
-       
+
         if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
         {
             StartCoroutine(Attack());
@@ -66,4 +83,47 @@ public class PlayerAttack : MonoBehaviour
         sword.SetActive(false);
         isAttacking = false;
     }
+
+    public void TakeDamage(int amount)
+    {
+        currentHearts -= amount;
+        if (currentHearts < 0) currentHearts = 0;
+
+        UpdateHeartsUI();
+
+        if (currentHearts == 0)
+        {
+            Die();
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        currentHearts += amount;
+        if (currentHearts > maxHearts) currentHearts = maxHearts;
+
+        UpdateHeartsUI();
+    }
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < currentHearts) hearts[i].SetActive(true);
+            else hearts[i].SetActive(false);
+
+        }
+    }
+
+    private void Die()
+    {
+
+        SceneManager.LoadScene("MenuDied");
+
+    }
+
+
+
+
+
 }
