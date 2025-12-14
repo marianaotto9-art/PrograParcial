@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private int enemigosRestantes = 8;
+    private int enemigosRestantes = 10;
     private TextMeshProUGUI counterText;
 
     private void Awake()

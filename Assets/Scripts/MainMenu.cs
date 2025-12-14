@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int hola = 5;
-   public void PlayGame()
+   
+    public void PlayGame()
     {
         SceneManager.LoadScene("GamePlay");
     }
@@ -21,8 +21,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-   public void Credits()
+    public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Saliste del juego");
+    }
+
+    public void LevelsMenu()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level2");
     }
 }
