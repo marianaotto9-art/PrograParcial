@@ -8,7 +8,6 @@ public class Botiquin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
 
     {
-        Debug.Log("toque");
         if (collision.CompareTag("Player"))
         {
             Player hp = collision.GetComponent<Player>();

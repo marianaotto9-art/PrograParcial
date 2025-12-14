@@ -18036,6 +18036,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1046168719}
+    - target: {fileID: 1553997988967324099, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -726.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553997988967324099, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 444.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883170104955468814, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -679.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2883170104955468814, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 443.19998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249626299338487300, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 793
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249626299338487300, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 440
+      objectReference: {fileID: 0}
     - target: {fileID: 5504488421312399011, guid: 6865307b64c6f494ca90008915566995, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18116,9 +18140,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5560203176776041442, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -775.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560203176776041442, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 445.09998
+      objectReference: {fileID: 0}
     - target: {fileID: 6316794712241964771, guid: 6865307b64c6f494ca90008915566995, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329458996775496841, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -823.19995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329458996775496841, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 446.39996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615246326780565238, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -871
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615246326780565238, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 447
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970666879585511289, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 784.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970666879585511289, guid: 6865307b64c6f494ca90008915566995, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 435.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -17,13 +17,18 @@ public class Player : MonoBehaviour
 
     private Vector2 lastMoveDirection = Vector2.down;
 
+    void Start()
+    {
+        currentHearts = maxHearts;
+    }
+
     void Update()
     {
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Ataque(horizontal, vertical);
-        currentHearts = maxHearts;
+        
 
         hearts = GameObject.FindGameObjectsWithTag("Heart");
         hearts = hearts.OrderBy(h => h.name).ToArray();

@@ -8,16 +8,22 @@ public class AttackHitbox : MonoBehaviour
     public int damage = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
-
     {
-        if (collision.CompareTag("Enemy"))
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            Enemy enemyHealth = collision.GetComponent<Enemy>();
-
-            if (enemyHealth != null)
-                enemyHealth.TakeDamage(damage);
+            enemy.TakeDamage(damage);
+            return;
         }
-     }
+
+        EnemyRange enemyRange = collision.GetComponent<EnemyRange>();
+        if (enemyRange != null)
+        {
+            enemyRange.TakeDamage(damage);
+        }
+    }
+
+
 }
-   
+
 

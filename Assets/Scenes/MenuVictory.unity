@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50289e0c0071262468edc01f452373e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hola: 5
 --- !u!4 &9708640
 Transform:
   m_ObjectHideFlags: 0
@@ -480,15 +479,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.97535944
+      value: 1.9495485
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.1109266
+      value: 10.21572
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0445617
+      value: 2.0878701
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -520,11 +519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -202
+      value: -299
       objectReference: {fileID: 0}
     - target: {fileID: 460210053356010349, guid: 8c7cdd610d39ccb419c250815a124a2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -973,8 +972,8 @@ Transform:
   m_GameObject: {fileID: 1833522462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0048, y: 0.0166, z: 0}
-  m_LocalScale: {x: 1.0815, y: 0.93359166, z: 1}
+  m_LocalPosition: {x: 0.0365, y: -0.0145, z: 0}
+  m_LocalScale: {x: 0.92425764, y: 0.92404974, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
