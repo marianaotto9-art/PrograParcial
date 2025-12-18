@@ -60,3 +60,6 @@ TagManager:
   - name: Canvas
     uniqueID: 2465562025
     locked: 0
+  - name: PAUSA
+    uniqueID: 4278256317
+    locked: 0

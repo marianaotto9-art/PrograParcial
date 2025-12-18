@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHearts = maxHearts;
+
+        hearts = GameObject.FindGameObjectsWithTag("Heart");
+        hearts = hearts.OrderBy(h => h.name).ToArray();
+
+        UpdateHeartsUI();
     }
 
     void Update()
@@ -28,12 +33,7 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Ataque(horizontal, vertical);
-        
-
-        hearts = GameObject.FindGameObjectsWithTag("Heart");
-        hearts = hearts.OrderBy(h => h.name).ToArray();
-
-        UpdateHeartsUI();
+       
     }
 
     private void Ataque(float horizontal, float vertical)

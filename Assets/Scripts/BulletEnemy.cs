@@ -5,22 +5,25 @@ using UnityEngine;
 public class BulletEnemy : MonoBehaviour
 {
     public float speed;
-    public int damage;    
-    // Start is called before the first frame update
+    public int damage;
+    public float lifeTime = 3f;
+
+    Vector3 dir;
+
     void Start()
     {
-        Destroy(gameObject, 3);
+        Destroy(gameObject, lifeTime);
+
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            dir = (player.transform.position - transform.position).normalized;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        BulletDirection();
-    }
-
-    private void BulletDirection()
-    {
-        transform.position += transform.right * speed * Time.deltaTime;
+        transform.position += dir * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,5 +34,4 @@ public class BulletEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

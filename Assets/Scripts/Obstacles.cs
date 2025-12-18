@@ -3,64 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+
 public class Obstacles : MonoBehaviour
 {
     public float speed = 2f;
     public int damage = 1;
-    private bool isActive = false;
-    public int direction = 1;
+    public Transform[] waypoints;
 
-    private Rigidbody2D rb;
+    private int index;
 
+    private SpriteRenderer sr;
 
-    private void Start()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.isKinematic = false;
-        rb.gravityScale = 0;
-        rb.freezeRotation = true;
-
-        rb.velocity = new Vector3(direction * speed, 0);
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
-        if (isActive)
+        Patrol();
+    }
+
+    void Patrol()
+    {
+        if (waypoints == null || waypoints.Length == 0) return;
+
+        Vector3 target = waypoints[index].position;
+        Vector3 dir = (target - transform.position).normalized;
+
+        transform.position += dir * speed * Time.deltaTime;
+
+        // Flip visual
+        if (dir.x > 0)
+            sr.flipX = false;
+        else if (dir.x < 0)
+            sr.flipX = true;
+
+        if (Vector2.Distance(transform.position, target) < 0.1f)
         {
-            rb.velocity = new Vector2(direction * speed, 0);
+            index++;
+            if (index >= waypoints.Length)
+                index = 0;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        direction *= -1;
 
-        transform.position += new Vector3(direction * 0.1f, 0, 0);
-        rb.velocity = new Vector2(direction * speed, 0);
-    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isActive && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Player hp = other.GetComponent<Player>();
-            if (hp != null)
-            {
-                hp.TakeDamage(damage);
-            }
+            other.GetComponent<Player>()?.TakeDamage(damage);
         }
     }
 
-    public void Activate()
+    private void OnDrawGizmosSelected()
     {
-        isActive = true;
-     
+        if (waypoints == null) return;
+
+        Gizmos.color = Color.magenta;
+        foreach (var p in waypoints)
+        {
+            if (p != null)
+                Gizmos.DrawSphere(p.position, 0.25f);
+        }
     }
 
-    public void Deactivate()
-    {
-        isActive = false;
-        GetComponent<Collider2D>().enabled = false;
-    }
-
-   
 
 }
+
